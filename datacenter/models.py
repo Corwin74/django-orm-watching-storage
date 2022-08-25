@@ -33,15 +33,14 @@ class Visit(models.Model):
     def get_duration(self):
         if self.leaved_at:
             return self.leaved_at - self.entered_at
-        else:
-            return localtime() - localtime(self.entered_at)
+        return localtime() - localtime(self.entered_at)
 
 
 def format_duration(timedelta):
     hours, remainder = divmod(timedelta.total_seconds(), 3600)
     minutes, seconds = divmod(remainder, 60)
-    return (f'{int(hours)} ч. {int(minutes)} мин. {int(seconds)} сек.')
+    return f'{int(hours)} ч. {int(minutes)} мин. {int(seconds)} сек.'
 
 
 def is_visit_long(visit, threshold=3600):
-    return True if visit.get_duration().total_seconds() > threshold else False
+    return visit.get_duration().total_seconds() > threshold

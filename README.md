@@ -14,19 +14,31 @@ Python3 должен быть уже установлен.
 pip install -r requirements.txt
 ```
 
-Необходимо подключиться к базе данных банка, заполнив соответствующие данные `DATABASES` в `settings.py`:
-```python
-'ENGINE': ...,
-'HOST': ...,
-'PORT': ...,
-'NAME': ...,
-'USER': ...,
-'PASSWORD': ...,
+### Настройки проекта
+
+Все конфиденциальные настройки проект берет из файла `.env`., который необходимо создать в корне проекта.  
+
+Для подключения к базе данных необходимо создать строку:
+
+```
+DATABASE_URL=postgres://USER:PASSWORD@HOST:PORT/NAME
+```
+заменив `USER`, `PASSWORD`, `HOST`, `PORT`, `NAME` на соответствующие значения.  
+
+Переменная SECRET_KEY является обязательной. Сгенерировать свой ключ можно [здесь](https://djecrety.ir/)  
+
+```
+SECRET_KEY=h33%#6*uci8e5(3(9xw(x4^*d=j57t1g(=zccawvjk(+rxmt#d  
+```
+
+Режим отладки управляется переменной `DEBUG`, значение по умолчанию `False`
+```
+DEBUG=True
 ```
 
 Для запуска сервера:
 ```commandline
-python main.py
+python manage.py runserver
 ```
 
 ### Цель проекта

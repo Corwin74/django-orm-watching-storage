@@ -1,2 +1,4 @@
 django==3.2.*
-psycopg2-binary==2.9.*
+psycopg2-binary~=2.9.0
+dj-database-url~=1.0.0
+environs[django]~=9.5.0

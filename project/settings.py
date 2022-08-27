@@ -12,7 +12,7 @@ DATABASES = {
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = env('DJANGO_SECRET_KEY')
+SECRET_KEY = env('DJANGO_SECRET_KEY', default='--==**Replace_this_key_in_production**==--')
 DEBUG = env.bool('DEBUG', default=False)
 
 ROOT_URLCONF = 'project.urls'

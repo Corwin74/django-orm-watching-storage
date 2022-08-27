@@ -14,11 +14,9 @@ INSTALLED_APPS = ['datacenter']
 
 SECRET_KEY = env('DJANGO_SECRET_KEY', default='--==**Replace_this_key_in_production**==--')
 DEBUG = env.bool('DEBUG', default=False)
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['.localhost', '127.0.0.1', '[::1]'])
 
 ROOT_URLCONF = 'project.urls'
-
-ALLOWED_HOSTS = ['*']
-
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES = [

@@ -25,7 +25,7 @@ DATABASE_URL=postgres://USER:PASSWORD@HOST:PORT/NAME
 ```
 заменив `USER`, `PASSWORD`, `HOST`, `PORT`, `NAME` на соответствующие значения.  
 
-Переменная `SECRET_KEY` является обязательной. Сгенерировать свой ключ можно [здесь](https://djecrety.ir/)  
+Переменная `SECRET_KEY`. Укажите собственное значение при запуске в production. Сгенерировать свой ключ можно [здесь](https://djecrety.ir/).
 
 ```
 SECRET_KEY=h33%#6*uci8e5(3(9xw(x4^*d=j57t1g(=zccawvjk(+rxmt#d  
